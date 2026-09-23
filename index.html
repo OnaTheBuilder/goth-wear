@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadows of the Subculture: Types of Goths</title>
+    <style>
+        :root {
+            --bg-pure-black: #000000;
+            --bg-card: #0a0a0d;
+            --blood-red: #900c3f;
+            --crimson: #c70039;
+            --bright-neon-red: #ff2e63;
+            --text-light: #e0e0e0;
+            --border-dark: #22030a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-pure-black);
+            color: var(--text-light);
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            padding: 0 1rem;
+        }
+
+        /* Blood Splatter Effect Header */
+        header {
+            text-align: center;
+            padding: 5rem 1rem 3rem 1rem;
+            background: linear-gradient(180deg, #150005 0%, var(--bg-pure-black) 100%);
+            border-bottom: 2px dashed var(--blood-red);
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--crimson);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            text-shadow: 0 0 10px var(--blood-red), 3px 3px 0px #000;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            color: #888;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .intro-section {
+            background: linear-gradient(145deg, #0d0103, #050505);
+            border: 1px solid var(--border-dark);
+            box-shadow: inset 0 0 15px rgba(144, 12, 63, 0.2);
+            padding: 2.5rem;
+            border-radius: 4px;
+            margin-bottom: 5rem;
+            text-align: center;
+        }
+
+        .intro-section h2 {
+            color: var(--bright-neon-red);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* Goth Type Layout Cards */
+        .goth-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-dark);
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-bottom: 4rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .goth-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--crimson);
+        }
+
+        .goth-header {
+            border-bottom: 2px solid var(--blood-red);
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .goth-title {
+            font-size: 2.2rem;
+            color: var(--bright-neon-red);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .goth-era {
+            font-size: 0.95rem;
+            color: #777;
+            text-transform: uppercase;
+            background-color: #1a0207;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            border: 1px solid var(--blood-red);
+        }
+
+        /* Split layout for descriptive elements */
+        .goth-body {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .goth-body {
+                grid-template-columns: 1.2fr 0.8fr;
+            }
+        }
+
+        .info-block h3 {
+            color: var(--crimson);
+            margin: 1.5rem 0 0.5rem 0;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+        }
+
+        .info-block h3:first-child {
+            margin-top: 0;
+        }
+
+        .info-block p {
+            color: #b0b0b0;
+            margin-bottom: 1rem;
+        }
+
+        .info-block ul {
+            list-style: square;
+            padding-left: 1.5rem;
+            color: #aaa;
+        }
+
+        .info-block ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Moodboard Placeholder System */
+        .moodboard {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            align-content: start;
+        }
+
+        .mood-img {
+            background-color: #111;
+            border: 1px solid #222;
+            border-radius: 4px;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0.5rem;
+            font-size: 0.85rem;
+            color: #666;
+            transition: color 0.3s, border-color 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mood-img:hover {
+            color: var(--bright-neon-red);
+            border-color: var(--blood-red);
+        }
+
+        .mood-img span.icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .mood-img span.caption {
+            font-family: sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Large highlight imagery placeholder block */
+        .mood-img.wide {
+            grid-column: span 2;
+            aspect-ratio: 2 / 1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 1rem;
+            margin-top: 6rem;
+            border-top: 1px dashed var(--blood-red);
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--crimson);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🦇</div>
+        <h1>Architects of the Night</h1>
+        <p>A dark encyclopedia exploring the styling, history, and customs of the gothic subculture.</p>
+    </header>
+
+    <div class="container">
+
+        <section class="intro-section">
+            <h2>Beyond the Dark Horizon</h2>
+            <p>Emerging from the UK post-punk ashes of the late 1970s, the Goth movement mutated from a musical obsession into a global underground lifestyle <a href="https://study.com/academy/lesson/video/what-is-the-goth-subculture.html" target="_blank"></a>. It is not just about wearing black; it is an appreciation for art, melancholic beauty, history, and the things society shies away from <a href="https://study.com/academy/lesson/video/what-is-the-goth-subculture.html" target="_blank"></a>. Explore its distinct paths below.</p>
+        </section>
+
+        <!-- 1. TRAD GOTH -->
+        <article class="goth-card">
+            <div class="goth-header">
+                <h2 class="goth-title">1. Trad Goth</h2>
+                <span class="goth-era">Late 1970s - 1980s</span>
+            </div>
+            <div class="goth-body">
+                <div class="info-block">
+                    <h3>The Origin</h3>
+                    <p>Traditional Goth is the pure, foundational root of the entire subculture, direct from legendary clubs like London's <em>Batcave</em> <a href="https://aesthetics.fandom.com/wiki/Trad_Goth" target="_blank"></a>. It revolves strictly around the original 80s post-punk and gothic rock music <a href="https://aesthetics.fandom.com/wiki/Trad_Goth" target="_blank"></a>.</p>
+                    
+                    <h3>Clothing & Aesthetic</h3>
+                    <p>Raw, DIY, punk-infused, and aggressive <a href="https://aesthetics.fandom.com/wiki/Trad_Goth" target="_blank"></a>. Think heavily backcombed "teased" black hair, fishnets torn into tops, leather jackets layered with band patches, silver chains, and sharp, geometric dark eyeliner <a href="https://aesthetics.fandom.com/wiki/Trad_Goth" target="_blank"></a>.</p>
+
+                    <h3>What They Do</h3>
+                    <ul>
+                        <li>Listen to foundational vinyl: <em>Bauhaus, Siouxsie and the Banshees, and The Cure</em> <a href="https://aesthetics.fandom.com/wiki/Trad_Goth" target="_blank"></a>.</li>
+                        <li>Attend specialized dark alternative club nights and underground gigs <a href="https://aesthetics.fandom.com/wiki/Trad_Goth" target="_blank"></a>.</li>
+                        <li>Maintain a strict DIY philosophy toward altering clothes, making patches, and customizing shoes <a href="https://aesthetics.fandom.com/wiki/Trad_Goth" target="_blank"></a>.</li>
+                    </ul>
+                </div>
+                
+                <div class="moodboard">
+                    <div class="mood-img wide">
+                        <span class="icon">👩‍🎤</span>
+                        <span class="caption">Teased Massive Hair Look</span>
+                    </div>
+                    <div class="mood-img">
+                        <span class="icon">🕸️</span>
+                        <span class="caption">Ripped Fishnets</span>
+                    </div>
+                    <div class="mood-img">
+                        <span class="icon">🧥</span>
+                        <span class="caption">Studded Leather</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- 2. ROMANTIC GOTH -->
+        <article class="goth-card">
+            <div class="goth-header">
+                <h2 class="goth-title">2. Romantic Goth</h2>
+                <span class="goth-era">1990s Evolution</span>
+            </div>
